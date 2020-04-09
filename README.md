@@ -64,4 +64,20 @@ void SelectionSort(vector<long int> &inputVector)
 }
 ```
 
+| Instruction  | Cost | Number of executions |
+| ------------- | ------------- | ------------- |
+| 1  | C1  |	1	|
+| 2  | C2  |	1	|
+| 3  | C3  |	n	|
+| 4  | C4  |	n-1	|
+| 5  | C5  |		|
+| 6  | C6  |		|
+| 7  | C7  |	![c7 equation](https://latex.codecogs.com/gif.latex?%5Csum_%7Bj%3D1%7D%5E%7Bn-1%7D%20t_%7Bj%7D)	|
+| 8  | C8  |	n-1	|
+| 9  | C9  |	![c9 equation](https://latex.codecogs.com/gif.latex?%5Csum_%7Bi%3D0%7D%5E%7Bn-2%7D%20t_%7Bi%7D)	|
+| 10  | C10  |		|
+| 11  | C11  |		|
+
 ### Insertion Sort 
+
+

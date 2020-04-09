@@ -79,7 +79,7 @@ void SelectionSort(vector<long int> &inputVector)
 | 11  | C11  |	n-1	|
 
 
-![equation](https://latex.codecogs.com/gif.latex?T%28n%29%20%3D%20an%5E2%20&plus;%20bn%20&plus;%20c)
+![eq](https://latex.codecogs.com/gif.latex?%24T%28n%29%20%3D%20an%5E2%20&plus;%20bn%20&plus;%20c%24)
 
 ### Insertion Sort 
 

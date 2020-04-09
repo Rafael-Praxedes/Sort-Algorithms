@@ -79,7 +79,7 @@ void SelectionSort(vector<long int> &inputVector)
 | 11  | C11  |	n-1	|
 
 
-**![eq](https://latex.codecogs.com/gif.latex?%24T%28n%29%20%3D%20an%5E2%20&plus;%20bn%20&plus;%20c%24)**
+![eq](https://latex.codecogs.com/gif.latex?%24T%28n%29%20%3D%20an%5E2%20&plus;%20bn%20&plus;%20c%24)
 
 ![a](https://latex.codecogs.com/gif.latex?a%20%3D%20%5Cfrac%7BC5%20&plus;%20C6%20&plus;%20C7%7D%7B2%7D)
 
@@ -122,5 +122,10 @@ void InsertionSort(vector<long int> &inputVector)
 | 8  | C8  |	( n*(n-1) )/2	|
 | 9  | C9  |	( n*(n-1) )/2	|
 
+![eq1](https://latex.codecogs.com/gif.latex?%24T%28n%29%20%3D%20an%5E2%20&plus;%20bn%20&plus;%20c%24)
 
+![a1](https://latex.codecogs.com/gif.latex?a%20%3D%20%5Cfrac%7BC5%20&plus;%20C6%20&plus;%20C7%20&plus;%20C8%20&plus;%20C9%7D%7B2%7D)
 
+![b1](https://latex.codecogs.com/gif.latex?b%20%3D%20C3%20&plus;%20C4%20&plus;%20%5Cfrac%7BC5%7D%7B2%7D%20-%20%5Cfrac%7BC6%7D%7B2%7D%20-%20%5Cfrac%7BC7%7D%7B2%7D%20-%20%5Cfrac%7BC8%7D%7B2%7D%20-%20%5Cfrac%7BC9%7D%7B2%7D)
+
+![C1](https://latex.codecogs.com/gif.latex?c%20%3D%20C1%20&plus;%20C2%20-%20C4%20-%20C5%20-%20C6%20-%20C7%20-%20C8%20-%20C9)

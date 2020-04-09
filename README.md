@@ -82,6 +82,7 @@ void SelectionSort(vector<long int> &inputVector)
 ![eq](https://latex.codecogs.com/gif.latex?%24T%28n%29%20%3D%20an%5E2%20&plus;%20bn%20&plus;%20c%24)
 
 ![a](https://latex.codecogs.com/gif.latex?a%20%3D%20%5Cfrac%7BC5%20&plus;%20C6%20&plus;%20C7%7D%7B2%7D)
+![b](https://latex.codecogs.com/gif.latex?b%20%3D%20C3%20&plus;%20C4%20&plus;%20%5Cfrac%7BC5%7D%7B2%7D%20-%20%5Cfrac%7BC6%7D%7B2%7D%20-%20%5Cfrac%7BC7%7D%7B2%7D%20&plus;%20C8%20&plus;%20C9%20&plus;%20C10%20&plus;%20C11)
 
 ### Insertion Sort 
 

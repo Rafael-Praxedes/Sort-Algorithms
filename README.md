@@ -42,23 +42,23 @@ In this section, the complexity functions for the "Insertion sort" and "Selectui
 
 ```c++
 void SelectionSort(vector<long int> &inputVector)
-{
-    int min_pos;
-    long int aux;
+{ 
+    int min_pos;						   // (1)
+    long int aux;						   // (2)
 
-    for (size_t i = 0; i < inputVector.size() - 1; i++){
+    for (size_t i = 0; i < inputVector.size() - 1; i++){	   // (3)
         
-        min_pos = i;
+        min_pos = i;						   // (4)
 
-        for (size_t j = i + 1; j < inputVector.size(); j++){
-            if(inputVector[min_pos] > inputVector[j]){
-                min_pos = j;
+        for (size_t j = i + 1; j < inputVector.size(); j++){	   // (5)
+            if(inputVector[min_pos] > inputVector[j]){		   // (6)
+                min_pos = j;					   // (7)
             }
         }
-        if(min_pos != i){
-            aux = inputVector[i];
-            inputVector[i] = inputVector[min_pos];
-            inputVector[min_pos] = aux;
+        if(min_pos != i){					   // (8)
+            aux = inputVector[i];				   // (9)
+            inputVector[i] = inputVector[min_pos];		   // (10)
+            inputVector[min_pos] = aux;				   // (11)
         }
     }
 }

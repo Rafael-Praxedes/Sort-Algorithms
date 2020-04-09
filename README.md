@@ -79,7 +79,7 @@ void SelectionSort(vector<long int> &inputVector)
 | 11  | C11  |	n-1	|
 
 
-![eq](https://latex.codecogs.com/gif.latex?%24T%28n%29%20%3D%20an%5E2%20&plus;%20bn%20&plus;%20c%24)
+![eq](https://latex.codecogs.com/gif.latex?%24T%28n%29%20%3D%20an%5E2%20&plus;%20bn%20&plus;%20c%24), in which 'n' is equal to input vector size
 
 ![a](https://latex.codecogs.com/gif.latex?a%20%3D%20%5Cfrac%7BC5%20&plus;%20C6%20&plus;%20C7%7D%7B2%7D)
 
@@ -122,7 +122,7 @@ void InsertionSort(vector<long int> &inputVector)
 | 8  | C8  |	( n*(n-1) )/2	|
 | 9  | C9  |	( n*(n-1) )/2	|
 
-![eq1](https://latex.codecogs.com/gif.latex?%24T%28n%29%20%3D%20an%5E2%20&plus;%20bn%20&plus;%20c%24)
+![eq1](https://latex.codecogs.com/gif.latex?%24T%28n%29%20%3D%20an%5E2%20&plus;%20bn%20&plus;%20c%24), in which 'n' is equal to input vector size
 
 ![a1](https://latex.codecogs.com/gif.latex?a%20%3D%20%5Cfrac%7BC5%20&plus;%20C6%20&plus;%20C7%20&plus;%20C8%20&plus;%20C9%7D%7B2%7D)
 

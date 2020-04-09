@@ -16,6 +16,7 @@
 
 #include <stdlib.h>
 #include "Algorithms/SelectionSort/selectionSort.hpp"
+#include "Algorithms/InsertionSort/insertionSort.hpp"
 
 using namespace std;
 using namespace std::chrono;
@@ -37,20 +38,24 @@ void GenerateDataFile(string fileName, int size, int limit)
 void ReadDataFile(string fileName, vector<long int> &data)
 {
     ifstream dataFile;
-    dataFile.open("In/" + fileName);
-
     string numberStr;
 
-    if(dataFile.is_open()){
-        while (getline(dataFile, numberStr)){
-            data.push_back(stol(numberStr));
+    while (data.size() == 0){
+        
+        dataFile.open("In/" + fileName);
+        
+        if(dataFile.is_open()){
+            while (getline(dataFile, numberStr)){
+                data.push_back(stol(numberStr));
+            }
+        }
+        else{
+            //Generate data file
+            cout << "The file " << fileName << " does not exist! Calling random file generate..." << endl;
+            GenerateDataFile(fileName, 20, 100);
         }
     }
-    else{
-        //Generate data file
-        cout << "The file " << fileName << " does not exist! Calling random file generate..." << endl;
-        GenerateDataFile(fileName, 20, 100);
-    }    
+    dataFile.close();    
 }
 
 void WriteDataFile(string fileName, vector<long int> &data)
@@ -66,6 +71,7 @@ void WriteDataFile(string fileName, vector<long int> &data)
     else{
         cout << "Error on open output file" << endl;
     }
+    dataFile.close();
 }
 
 void PrintVector(vector<long int> &data)
@@ -78,31 +84,51 @@ void PrintVector(vector<long int> &data)
 
 int main(int argc, char** argv)
 {
+    cout << ">>>>>>>>>>>>>>>>>>>> " << string(argv[2]) << " <<<<<<<<<<<<<<<<<<<<" << endl;
+
     //Read input file
     cout << "Read input file..." << endl;
     vector<long int> data;
-    ReadDataFile(argv[1], data);
+    ReadDataFile(argv[2], data);
 
     //Print the input data
     //PrintVector(data);
 
     //Sort
     cout << "Sorting the data..." << endl;
-    auto start = high_resolution_clock::now();
-    SelectionSort(data);
-    auto stop = high_resolution_clock::now();
+    
+    if(argv[1] == string("selection") || argv[1] == string("Selection")){
+        auto start = high_resolution_clock::now();
+        SelectionSort(data);
+        auto stop = high_resolution_clock::now();
 
-    auto duration = duration_cast<microseconds>(stop - start);
-    cout << "\t >>> Sorting time: " << duration.count() << " us" << endl;
+        auto duration = duration_cast<microseconds>(stop - start);
+        cout << "\t >>> Selection Sort time: " << duration.count() << " us" << endl;
+    }
+    else if(argv[1] == string("insertion") || argv[1] == string("Insertion")){
+        auto start = high_resolution_clock::now();
+        InsertionSort(data);
+        auto stop = high_resolution_clock::now();
+
+        auto duration = duration_cast<microseconds>(stop - start);
+        cout << "\t >>> Insertion Sort time: " << duration.count() << " us" << endl;
+    }
+    else{
+        cout << "Invalid method! Please try again, inserting one of below options on correspondent method argument: " << endl;
+        cout << "\t >>> <selection> or <Selection> " << endl;
+        cout << "\t >>> <insertion> or <Insertion> " << endl;
+
+        return -1;
+    }
 
     //Write output file
     cout << "Write output file..." << endl;
-    WriteDataFile(argv[2], data);
+    WriteDataFile(argv[3], data);
 
     //Print the output data
     //PrintVector(data);
 
-    cout << "Finishing..." << endl;
+    cout << "Finishing...\n" << endl;
 
     return 0;
 }

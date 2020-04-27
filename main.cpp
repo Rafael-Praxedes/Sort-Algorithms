@@ -17,6 +17,8 @@
 #include <stdlib.h>
 #include "Algorithms/SelectionSort/selectionSort.hpp"
 #include "Algorithms/InsertionSort/insertionSort.hpp"
+#include "Algorithms/MergeSort/mergeSort.hpp"
+#include "Algorithms/QuickSort/quickSort.hpp"
 
 using namespace std;
 using namespace std::chrono;
@@ -112,6 +114,28 @@ int main(int argc, char** argv)
 
         auto duration = duration_cast<microseconds>(stop - start);
         cout << "\t >>> Insertion Sort time: " << duration.count() << " us" << endl;
+    }
+    else if(argv[1] == string("merge") || argv[1] == string("Merge"))
+    {
+        auto start = high_resolution_clock::now();
+        MergeSort(data, 0, data.size() - 1);
+        auto stop = high_resolution_clock::now();
+
+        auto duration = duration_cast<microseconds>(stop - start);
+        cout << "\t >>> Merge Sort time: " << duration.count() << " us" << endl;
+    }
+    else if(argv[1] == string("quick") || argv[1] == string("Quick"))
+    {
+        if (argv[4] != string("median") && argv[4] != string("Median") && argv[4] != string("random") && argv[4] != string("Random") 
+            && argv[4] != string("first") && argv[4] != string("First")){
+            cout << ">> SelectPivot Function: Invalid mode! The pivot will be the first element of vector" << endl;
+        }
+        auto start = high_resolution_clock::now();
+        QuickSort(data, 0, data.size() - 1, argv[4]);
+        auto stop = high_resolution_clock::now();
+
+        auto duration = duration_cast<microseconds>(stop - start);
+        cout << "\t >>> Quick Sort time: " << duration.count() << " us" << endl;
     }
     else{
         cout << "Invalid method! Please try again, inserting one of below options on correspondent method argument: " << endl;

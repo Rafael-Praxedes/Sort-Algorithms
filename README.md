@@ -24,7 +24,7 @@ $ python3 run.py merge
 $ python3 run.py quick <mode>
 ```
 - Obs.: 
-	- If the selected method is quick sort, it is necessary specify the pivot selection mode <first>, <median> or <random>. 
+	- If the selected method is quick sort, it is necessary specify the pivot selection mode "first", "median" or "random". 
 
 ### Running specific input file (one instance)
 Follow the below steps to running the program:
@@ -48,7 +48,7 @@ $ ./sortingAlgorithms merge num.1000.1.in num.1000.1.out
 $ ./sortingAlgorithms quick num.1000.1.in num.1000.1.out <mode>
 ```
 - Obs.: 
-	- If the selected method is quick sort, it is necessary specify the pivot selection mode <first>, <median> or <random>.
+	- If the selected method is quick sort, it is necessary specify the pivot selection mode "first", "median" or "random".
 	- If specified input file does not exist, an another input file with 20 random elements that belonging to the range -100 to 100 is created
 
 ## Complexity functions

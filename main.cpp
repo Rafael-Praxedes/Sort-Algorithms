@@ -19,6 +19,7 @@
 #include "Algorithms/InsertionSort/insertionSort.hpp"
 #include "Algorithms/MergeSort/mergeSort.hpp"
 #include "Algorithms/QuickSort/quickSort.hpp"
+#include "Algorithms/CountingSort/countingSort.hpp"
 
 using namespace std;
 using namespace std::chrono;
@@ -126,6 +127,11 @@ int main(int argc, char** argv)
     }
     else if(argv[1] == string("quick") || argv[1] == string("Quick"))
     {
+        if(argc < 5){
+            cout << "Error! Unspecified SelectPivot Function!" << endl;
+            return -1;
+        }
+
         if (argv[4] != string("median") && argv[4] != string("Median") && argv[4] != string("random") && argv[4] != string("Random") 
             && argv[4] != string("first") && argv[4] != string("First")){
             cout << ">> SelectPivot Function: Invalid mode! The pivot will be the first element of vector" << endl;
@@ -136,6 +142,26 @@ int main(int argc, char** argv)
 
         auto duration = duration_cast<microseconds>(stop - start);
         cout << "\t >>> Quick Sort time: " << duration.count() << " us" << endl;
+    }
+    else if(argv[1] == string("counting") || argv[1] == string("Counting")){
+        
+        vector<long int> dataOut(data.size());
+        int minElement = MinElement(data);
+        
+        InputEditor(data, 1, minElement);
+        
+        auto start = high_resolution_clock::now();
+        CountingSort(data, dataOut, MaxElement(data));
+        auto stop = high_resolution_clock::now();
+
+        InputEditor(dataOut, 0, minElement);
+
+        auto duration = duration_cast<microseconds>(stop - start);
+        cout << "\t >>> Counting Sort time: " << duration.count() << " us" << endl;
+        
+        for (size_t i = 0; i < data.size(); i++){
+            data[i] = dataOut[i];
+        }
     }
     else{
         cout << "Invalid method! Please try again, inserting one of below options on correspondent method argument: " << endl;

@@ -23,6 +23,9 @@ $ python3 run.py merge
 ```sh
 $ python3 run.py quick <mode>
 ```
+```sh
+$ python3 run.py counting
+```
 - Obs.: 
 	- If the selected method is quick sort, it is necessary specify the pivot selection mode "first", "median" or "random". 
 
@@ -46,6 +49,9 @@ $ ./sortingAlgorithms merge num.1000.1.in num.1000.1.out
 ```
 ```sh
 $ ./sortingAlgorithms quick num.1000.1.in num.1000.1.out <mode>
+```
+```sh
+$ ./sortingAlgorithms counting num.1000.1.in num.1000.1.out
 ```
 - Obs.: 
 	- If the selected method is quick sort, it is necessary specify the pivot selection mode "first", "median" or "random".

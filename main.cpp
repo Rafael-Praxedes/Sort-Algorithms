@@ -20,6 +20,7 @@
 #include "Algorithms/MergeSort/mergeSort.hpp"
 #include "Algorithms/QuickSort/quickSort.hpp"
 #include "Algorithms/CountingSort/countingSort.hpp"
+#include "Algorithms/RadixSort/radixSort.hpp"
 
 using namespace std;
 using namespace std::chrono;
@@ -162,6 +163,25 @@ int main(int argc, char** argv)
         for (size_t i = 0; i < data.size(); i++){
             data[i] = dataOut[i];
         }
+    }
+    else if(argv[1] == string("radix") || argv[1] == string("Radix")){
+        vector<long int> dataOut(data.size());
+        int minElement = MinElement(data);
+        
+        InputEditor(data, 1, minElement);
+        
+        auto start = high_resolution_clock::now();
+        RadixSort(data, dataOut, MaxElement(data));
+        auto stop = high_resolution_clock::now();
+
+        InputEditor(data, 0, minElement);
+
+        auto duration = duration_cast<microseconds>(stop - start);
+        cout << "\t >>> Radix Sort time: " << duration.count() << " us" << endl;
+        
+        /*for (size_t i = 0; i < data.size(); i++){
+            data[i] = dataOut[i];
+        }*/
     }
     else{
         cout << "Invalid method! Please try again, inserting one of below options on correspondent method argument: " << endl;

@@ -21,6 +21,7 @@
 #include "Algorithms/QuickSort/quickSort.hpp"
 #include "Algorithms/CountingSort/countingSort.hpp"
 #include "Algorithms/RadixSort/radixSort.hpp"
+#include "Algorithms/HeapSort/heapSort.hpp"
 
 using namespace std;
 using namespace std::chrono;
@@ -178,10 +179,14 @@ int main(int argc, char** argv)
 
         auto duration = duration_cast<microseconds>(stop - start);
         cout << "\t >>> Radix Sort time: " << duration.count() << " us" << endl;
-        
-        /*for (size_t i = 0; i < data.size(); i++){
-            data[i] = dataOut[i];
-        }*/
+    }
+    else if(argv[1] == string("heap") || argv[1] == string("Heap")){
+        auto start = high_resolution_clock::now();
+        HeapSort(data);
+        auto stop = high_resolution_clock::now();
+
+        auto duration = duration_cast<microseconds>(stop - start);
+        cout << "\t >>> Heap Sort time: " << duration.count() << " us" << endl;
     }
     else{
         cout << "Invalid method! Please try again, inserting one of below options on correspondent method argument: " << endl;

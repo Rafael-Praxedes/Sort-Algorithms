@@ -29,6 +29,9 @@ $ python3 run.py counting
 ```sh
 $ python3 run.py radix
 ```
+```sh
+$ python3 run.py heap
+```
 - Obs.: 
 	- If the selected method is quick sort, it is necessary specify the pivot selection mode "first", "median" or "random". 
 
@@ -58,6 +61,9 @@ $ ./sortingAlgorithms counting num.1000.1.in num.1000.1.out
 ```
 ```sh
 $ ./sortingAlgorithms radix num.1000.1.in num.1000.1.out
+```
+```sh
+$ ./sortingAlgorithms heap num.1000.1.in num.1000.1.out
 ```
 - Obs.: 
 	- If the selected method is quick sort, it is necessary specify the pivot selection mode "first", "median" or "random".
